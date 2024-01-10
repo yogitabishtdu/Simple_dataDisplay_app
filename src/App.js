@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import data from "./components/Data";
+import { useState } from "react";
 
 function App() {
+  const [list, setList] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{list.length} birthdays today</h1>
+      {list.map((l) => {
+        return (
+          <>
+            <div key={l.id}>
+              <img src={l.image} alt={l.name} />
+              <div>
+                <h2>{l.name}</h2>
+                <p>{l.age}</p>
+              </div>
+            </div>
+          </>
+        );
+      })}
+      <button onClick={() => setList([])}>Clear All</button>
     </div>
   );
 }
