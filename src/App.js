@@ -6,7 +6,7 @@ function App() {
   const [list, setList] = useState(data);
   return (
     <div>
-      <h2>Simple display of data using map</h2>
+      <h3>Simple display of data using map</h3>
       <h1>{list.length} birthdays today</h1>
       {list.map((l) => {
         return (
