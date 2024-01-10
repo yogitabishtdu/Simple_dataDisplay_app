@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
       <h1>{list.length} birthdays today</h1>
+      <h1>{list.length} my birthdays today</h1>
       {list.map((l) => {
         return (
           <>
